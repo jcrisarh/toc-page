@@ -481,7 +481,7 @@ box-shadow: 0 0 0 0 rgba(37,211,102,0);
 background: rgba(255,255,255,0.85);
 backdrop-filter: blur(10px);
 
-padding: 18px 0;
+padding: 1px 0;
 
 box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 
@@ -501,9 +501,19 @@ letter-spacing: 1px;
 }
 
 .logo-img {
-    height: 100px;
+    height: 80px;
     width: auto;
     transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 55px;
+    }
+
+    .logo-text {
+        font-size: 18px;
+    }
 }
 
 .navbar-brand:hover .logo-img {
@@ -712,6 +722,8 @@ padding:120px 0;
 .quienes-somos::before{
 
     content:"";
+
+    pointer-events:none;
 
     position:absolute;
 
@@ -1837,4 +1849,43 @@ color:#444;
 font-size:16px;
 line-height:1.6;
 
+}
+
+@media (max-width: 768px) {
+
+    .doctor-layout {
+        flex-direction: column;
+        width: 100%;
+        gap: 40px;
+    }
+
+    .doctor-foto {
+        width: 100%;
+        text-align: center;
+    }
+
+    .doctor-foto img {
+        max-width: 100%;
+    }
+
+    .doctor-info {
+        width: 100%;
+        min-width: 0;
+        grid-template-columns: 1fr;
+    }
+
+    .doctor-card {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .principal {
+        grid-column: span 1;
+    }
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
